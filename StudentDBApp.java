@@ -6,28 +6,50 @@ public class StudentDBApp {
         StudentDatabase.students = new Student[4];
         int option;
 
-        while (true) {
-            option= ConsoleUI.printMenu();
-            if (option ==1){
-                 StudentDatabase.printAllStudents();
-            }else if(option ==2 ){
-                System.out.println("Enter student's data: ");
-                StudentDatabase.addStudent(in.nextLine(), in.nextLine(), in.nextInt());
-                in.nextLine();
-            }else if(option == 3){
-                System.out.print("Chose the student you wont to delete: ");
-                StudentDatabase.deleteStudent(in.nextInt());
+        //while (true) {
+        //    option= ConsoleUI.printMenu();
+        //    if (option ==1){
+        //         StudentDatabase.printAllStudents();
+        //    }else if(option ==2 ){
+        //        System.out.println("Enter student's data: ");
+        //        StudentDatabase.addStudent(in.nextLine(), in.nextLine(), in.nextInt());
+        //        in.nextLine();
+        //    }else if(option == 3){
+        //        System.out.print("Chose the student you wont to delete: ");
+        //        StudentDatabase.deleteStudent(in.nextInt());
 
-            }else if(option ==4){
-               System.out.println("Enter new student data: ");
-               StudentDatabase.updateStudentdata(in.nextInt(), in.nextLine(), in.nextLine(), in.nextInt());
-            };
+        //    }else if(option ==4){
+        //       System.out.println("Enter new student data: ");
+        //       StudentDatabase.updateStudentdata(in.nextInt(), in.nextLine(), in.nextLine(), in.nextInt());
+        //    };
+        //    
+        //}
+
+
+        while (true){
+        option= ConsoleUI.printMenu();
+            switch (option ) {
+                case 1:
+                   StudentDatabase.printAllStudents();
+                    break;
+                case 2 :
+                    System.out.print("Enter student's data: ");
+                    StudentDatabase.addStudent(in.nextLine(), in.nextLine(), in.nextInt());
+                    in.nextLine();
+                    break;
+                case 3:
+                    System.out.print("Chose the student you wont to delete: ");
+                    StudentDatabase.deleteStudent(in.nextInt());
+                    break;
             
+                case 4 :
+                    System.out.println("Enter new student data: ");
+                    StudentDatabase.updateStudentdata(in.nextInt(), in.nextLine(), in.nextLine(), in.nextInt());
+                    break;
+                default:
+                    break;
+           }
         }
-
-
-
-      
 
 
 
